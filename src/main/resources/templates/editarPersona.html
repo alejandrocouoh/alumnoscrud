@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h1>Agregar Nueva Persona.</h1>
+        </div>
+        <div>
+            <form th:action="@{/v1/actualizarPersona/{id}(id=${actualizarPersona.id})}" method="post" th:object="${actualizarPersona}">
+                <label>
+                    Nombre :
+                    <input type="text" name="nombre" value="Nombres de la persona" th:field="*{nombres}"/>
+                </label>
+                <br/>
+                <br/>
+                <label>
+                    Edad:
+                    <input type="text" name="name" value="Apellidos de la persona" th:field="*{edad}"/>
+                </label>
+                <br/><br/>
+                <label>
+                    Fecha Nacimiento:
+                    <input type="date" name="name" value="Apellidos de la persona" th:field="*{nacimiento}"/>
+                </label>
+                <br/><br/>
+                <label>
+                    Fecha inscripcion:
+                    <input type="date" name="name" value="Apellidos de la persona" th:field="*{inscripcion}"/>
+                </label>
+                <br/><br/>
+                <label>
+                    Costo:
+                    <input type="text" name="name" value="Apellidos de la persona" th:field="*{costo}"/>
+                </label>
+                <br/><br/>
+                <input type="submit" value="Actualizar Persona" name="agregar" />
+            </form>
+        </div>
+    </body>
+</html>

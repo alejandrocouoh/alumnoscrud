@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org"> 
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+       <div><h1>Lista de Personas.</h1></div>
+        <div>
+            <a th:href="@{/v1/agregarPersona}">Nueva Persona</a>
+        </div>
+        <br/>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Fecha Nacimiento</th>
+                    <th>Fecha Inscripcion</th>
+                    <th>Costo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+               <tr th:each="persona:${personas}">
+                    <td th:text="${persona.id}"></td>
+                    <td th:text="${persona.nombres}"></td>
+                    <td th:text="${persona.edad}"></td>
+                    <td th:text="${persona.inscripcion}"></td>
+                    <td th:text="${persona.nacimiento}"></td>
+                    <td th:text="${persona.costo}"></td>
+                    <th>
+                        <a th:href="@{/v1/actualizarPersona/{id}(id=${persona.id})}">Editar</a>
+                        <a th:href="@{/v1/eliminarPersona/{id}(id=${persona.id})}">Eliminar</a>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
